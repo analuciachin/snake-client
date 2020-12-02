@@ -23,25 +23,24 @@ const connect = function() {
     conn.write('Name: ALC');
   });
 
-  conn.on('connect', () => {
-    for (let i = 0; i < 100; i++) {
-      setTimeout(() => {
-        if (i % 2 === 0) {
-          conn.write('Move: up');
-        } else if (i % 3 === 0) {
-          conn.write('Move: up');
-        } else if (i % 5 === 0) {
-          conn.write('Move: down');
-        } else {
-          conn.write('Move: right');
-        }
-      }, i * 800)}
-  })
+  // conn.on('connect', () => {
+  //   for (let i = 0; i < 100; i++) {
+  //     setTimeout(() => {
+  //       if (i % 2 === 0) {
+  //         conn.write('Move: up');
+  //       } else if (i % 3 === 0) {
+  //         conn.write('Move: up');
+  //       } else if (i % 5 === 0) {
+  //         conn.write('Move: down');
+  //       } else {
+  //         conn.write('Move: right');
+  //       }
+  //     }, i * 800)}
+  // })
 
   return conn;
 }
 
+
 module.exports = {connect};
 
-// console.log('Connecting ...');
-// connect();
